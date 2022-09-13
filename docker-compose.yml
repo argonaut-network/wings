@@ -5,11 +5,11 @@ services:
     image: ghcr.io/pterodactyl/wings:latest
     restart: always
 #    command: wings --auto-tls --tls-hostname node1.argonaut.network --ignore-certificate-errors
-    command: wings --ignore-certificate-errors
+#    command: wings --ignore-certificate-errors
     networks:
       - wings0
     ports:
-      - "2053:2053"
+      - "8080:8080"
       - "2022:2022"
     tty: true
     environment:
@@ -21,7 +21,7 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
       - "/var/lib/docker/containers/:/var/lib/docker/containers/"
       - "/etc/pterodactyl/:/etc/pterodactyl/"
-      - "/home/pterodactyl/var/lib/pterodactyl/:/home/pterodactyl/var/lib/pterodactyl/"
+      - "/var/lib/pterodactyl/:/var/lib/pterodactyl/"
       - "/var/log/pterodactyl/:/var/log/pterodactyl/"
       - "/tmp/pterodactyl/:/tmp/pterodactyl/"
       - "/etc/ssl/certs:/etc/ssl/certs:ro"
