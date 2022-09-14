@@ -1,3 +1,5 @@
+# Set MTU via "$HOST_MTU"! Failure to do so could result in errors.
+
 version: '3.8'
 
 services:
@@ -40,3 +42,4 @@ networks:
         - subnet: "172.21.0.0/16"
     driver_opts:
       com.docker.network.bridge.name: wings0
+      com.docker.network.driver.mtu: $HOST_MTU
