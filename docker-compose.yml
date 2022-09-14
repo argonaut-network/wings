@@ -3,7 +3,7 @@ version: '3.8'
 services:
   wings:
     image: ghcr.io/pterodactyl/wings:latest
-    name: wings
+    container_name: wings
     restart: always
     command: wings --ignore-certificate-errors
     networks:
