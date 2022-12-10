@@ -7,7 +7,7 @@ services:
     image: ghcr.io/pterodactyl/wings:v1.7.2
     container_name: wings
     restart: always
-    command: wings --ignore-certificate-errors
+    command: wings # --ignore-certificate-errors
     networks:
       - wings0
     ports:
