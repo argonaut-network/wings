@@ -26,7 +26,10 @@ services:
       - "/var/lib/pterodactyl/:/var/lib/pterodactyl/"
       - "/var/log/pterodactyl/:/var/log/pterodactyl/"
       - "/tmp/pterodactyl/:/tmp/pterodactyl/"
-      # - "/etc/ssl/certs:/etc/ssl/certs:ro" Unnecessary given that 'ca-certificates.crt' doesn't exist on RHEL, and the path is hardcoded into the image
+      # Ubuntu
+      # - "/etc/ssl/certs:/etc/ssl/certs:ro"
+      # RHEL/Fedora
+      - "/etc/ssl/certs/ca-certificates.crt:/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt:ro"
       - "/backups/pterodactyl/:/backups/pterodactyl"
       - "/etc/letsencrypt/:/etc/letsencrypt/"
       - "/usr/share/zoneinfo/America/New_York:/etc/localtime:ro"
