@@ -28,7 +28,7 @@ services:
       - "/tmp/pterodactyl/:/tmp/pterodactyl/"
       # - "/etc/ssl/certs:/etc/ssl/certs:ro" Unnecessary given that 'ca-certificates.crt' doesn't exist on RHEL, and the path is hardcoded into the image
       - "/backups/pterodactyl/:/backups/pterodactyl"
-      # - "/etc/letsencrypt/:/etc/letsencrypt/"
+      - "/etc/letsencrypt/:/etc/letsencrypt/"
       - "/usr/share/zoneinfo/America/New_York:/etc/localtime:ro"
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
