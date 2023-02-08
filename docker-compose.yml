@@ -4,7 +4,7 @@ version: '3.8'
 
 services:
   wings:
-    image: ghcr.io/pterodactyl/wings:v1.7.2
+    image: ghcr.io/pterodactyl/wings:v1.11.3
     container_name: wings
     restart: always
     command: wings # --ignore-certificate-errors
